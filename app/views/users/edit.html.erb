@@ -1,0 +1,29 @@
+
+
+
+<div class="user-box">
+<h1>User info</h1>
+<% if @user.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= form_for(@user)do|f| %>
+
+<p>name</p>
+ <%= f.text_field :name %>
+
+<h2>image</h2>
+ <%= f.attachment_field :image %>
+<p>introduction</p>
+ <%= f.text_area :introduction %>
+ <br>
+  <%= f.submit 'Update User' %>
+ 
+<% end %>
+</div>

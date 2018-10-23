@@ -1,0 +1,37 @@
+<%= render 'users/template',  user: @user, book: @book %>
+
+
+<div class="col-lg-9">
+ <table class="table table-striped">
+ <h1>Users</h1>
+  <thead>
+   <tr>
+    <th>image</th>
+    <th>name</th>
+   <th></th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <% @users.each do |user| %>
+   <tr>
+    <td>
+     <span> 
+      <%= attachment_image_tag user, :image, format: 'jpeg',fallback:"No_image.jpg",class: "iimg" %>
+     </span>
+    </td>
+    <td>
+     <span>
+      <%= user.name %>
+    </span>
+    </td>
+     <td>
+      <span><%=link_to "show",user_path(user.id) %></span>
+    </td>
+    </tr>
+<% end %>
+ </tbody>
+</table>
+</div>
+</div>
+</div>   

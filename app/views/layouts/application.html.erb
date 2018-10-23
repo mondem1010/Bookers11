@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers11</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
+  </head>
+
+
+  <body>
+    <header>
+  <div class="header-box">
+    <p class="zz">Bookers</p>
+  </div>
+
+   <div class="social"></div>
+    <nav>
+     <nav class="header-right">
+      <ul class="nav-list">
+       <% if user_signed_in? %>
+        <li>
+         <i class="fas fa-home">
+          <%=link_to"Home",user_path(current_user.id) %>
+         </i>
+        </li>
+
+        <li>
+          <i class="fas fa-user">
+            <%=link_to"Users",users_path %>
+          </i>
+        </li>
+        <li>
+          <i class="fas fa-book">
+            <%=link_to"Books",books_path %>
+          </i>
+        </li>
+         <li>
+          <i class="fas fa-sign-out-alt">
+            <%=link_to"Log out",destroy_user_session_path, method: :delete %>
+          </i>
+        </li>
+        <% else %>
+         <li>
+          <i class="fas fa-home">
+          <%=link_to"Home",root_path %>
+          </i>
+         </li>
+
+      <li>
+        <i class="fas fa-link">
+          <%= link_to "About",about_path %>
+        </i>
+      </li>
+      <li>
+        <i class="fas fa-edit">
+          <%= link_to "Sign up",new_user_registration_path %>
+        </i>
+      </li>
+      <li>
+        <i class="fas fa-sign-in-alt">
+          <%= link_to "Log in",new_user_session_path %>
+        </i>
+      </li>
+    </ul>
+  </nav>
+  <% end %>
+  </nav>
+
+</header>
+    <%= yield %>
+  </body>
+  <footer>
+    CopyRight Infratop.inc
+  </footer>
+
+</html>

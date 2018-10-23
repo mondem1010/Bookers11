@@ -1,0 +1,36 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix::before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+img{
+	width: 100px;
+	height: 100px;
+}
+
+.iimg{
+	width: 20px;
+	height: 24px;
+}
+
+.sign{
+	width: 1200px;
+	height: 440px;
+	margin: 0 auto;
+}
+.log{
+	width: 1200px;
+	height: 280px;
+	margin: 0 auto;
+}
+
+.user-box{
+	width: 1100px;
+	margin: 0 auto;
+	
+}
