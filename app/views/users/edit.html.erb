@@ -19,9 +19,9 @@
  <%= f.text_field :name %>
 
 <h2>image</h2>
- <%= f.attachment_field :image %>
+ <%= f.attachment_field :image,class:"user_image" %>
 <p>introduction</p>
- <%= f.text_area :introduction %>
+ <%= f.text_area :introduction,class:"introduction" %>
  <br>
   <%= f.submit 'Update User' %>
  
