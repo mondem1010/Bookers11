@@ -33,7 +33,7 @@
       <%= attachment_image_tag book.user, :image, format: 'jpeg',fallback:"No_image.jpg",class: "iimg" %>
      </span>
     </td>
-      <td><span><%= link_to book.title,book_path(book.id),class:"book_#{@book.id}" %></span></td>
+      <td><span><%= link_to book.title,book_path(book.id),class:"book_#{book.id}" %></span></td>
       <td><span><%= book.body %></span></td>
      </tr>
      <% end %>
